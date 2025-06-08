@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py --config config/params.yaml
+    deps:
+    - path: config/params.yaml
+      hash: md5
+      md5: f812009c75fc0af35a4b8f69e2dfac16
+      size: 200
+    - path: data/raw/processed_(A+B)_data.xlsx
+      hash: md5
+      md5: 622ee66a0f7805f96de77d0c01b0b264
+      size: 48844
+    - path: data/raw/processed_C_data.xlsx
+      hash: md5
+      md5: 60c7dc512f79a42cc8ba470c61c69b5c
+      size: 16533
+    - path: src/prepare_data.py
+      hash: md5
+      md5: e5ffde9124401ee0b63258b61b97be9f
+      size: 1667
+    outs:
+    - path: data/test_C.csv
+      hash: md5
+      md5: 7a3c2bc3f5ec0ba98c772e3c49e51464
+      size: 10832
+    - path: data/train_(A+B).csv
+      hash: md5
+      md5: fae12b5a437afb99b89e8e10fbce376f
+      size: 32517

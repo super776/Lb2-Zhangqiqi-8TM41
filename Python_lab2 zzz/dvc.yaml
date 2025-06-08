@@ -1,0 +1,11 @@
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py --config config/params.yaml
+    deps:
+      - src/prepare_data.py
+      - config/params.yaml
+      - data/raw/processed_(A+B)_data.xlsx
+      - data/raw/processed_C_data.xlsx
+    outs:
+      - data/train_(A+B).csv
+      - data/test_C.csv
